@@ -4,9 +4,11 @@
   justify-content: space-between;
   border-bottom: solid 1px #e2e8f0;
   line-height: 2px;
+  align-items: center;
 }
 .nav .left {
   display: flex;
+  align-items: center;
 }
 .nav .left .menu {
   display: flex;
@@ -19,4 +21,10 @@
   padding: 3px 16px;
   display: block;
   font-size: 16px;
+}
+.nav .left .menu li a:hover {
+  color: #000;
+}
+.nav .right a:first-child {
+  margin-right: 5px;
 }
