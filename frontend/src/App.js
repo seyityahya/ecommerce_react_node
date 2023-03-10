@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Signin from "./pages/Auth/Signin/index";
 import Signup from "./pages/Auth/Signup/index";
 import Products from "./pages/Products/index";
+import ProductDetail from "./pages/ProductDetail/index";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div id="content">
         <Routes>
           <Route path="/" exect element={<Products />} />
+          <Route path="/product/:product_id" element={<ProductDetail />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

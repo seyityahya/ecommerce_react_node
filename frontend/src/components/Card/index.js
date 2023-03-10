@@ -17,7 +17,7 @@ import moment from "moment";
 function Cards({ item }) {
   return (
     <Card maxW="sm">
-      <Link to="/#">
+      <Link to={`/product/${item._id}`}>
         <CardBody>
           <Image
             src={item.photos[0]}

@@ -10,6 +10,9 @@
   display: flex;
   align-items: center;
 }
+.nav .left .logo {
+  font-weight: bold;
+}
 .nav .left .menu {
   display: flex;
   margin-left: 40px;
