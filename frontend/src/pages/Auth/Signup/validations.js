@@ -8,7 +8,7 @@ const validations = yup.object().shape({
     .required(),
   passwordConfirm: yup
     .string()
-    .oneOf([yup.ref("password")], "Parolanız uyşmuyor")
+    .oneOf([yup.ref("password")], "Parolanız uyuşmuyor")
     .required(),
 });
 
