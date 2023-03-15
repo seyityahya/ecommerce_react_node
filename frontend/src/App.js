@@ -7,6 +7,7 @@ import Products from "./pages/Products/index";
 import ProductDetail from "./pages/ProductDetail/index";
 import Profile from "./pages/Profile/index";
 import Basket from "./pages/Basket/index";
+import Error404 from "./pages/Error404/index";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
     </BrowserRouter>

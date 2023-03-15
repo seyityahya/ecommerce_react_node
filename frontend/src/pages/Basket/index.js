@@ -4,12 +4,12 @@ import { Alert, Image, AlertIcon, Button, Box, Text } from "@chakra-ui/react";
 import { useBasket } from "../../contexts/BasketContext";
 
 function Basket() {
-  const { items } = useBasket();
+  const { items, removeFromBasket } = useBasket();
 
   const total = items.reduce((acc, obj) => acc + obj.price, 0);
 
   return (
-    <div>
+    <Box p="5">
       {items.length < 1 && (
         <Alert status="warning">
           <AlertIcon />
@@ -18,18 +18,26 @@ function Basket() {
       )}
       {items.length > 0 && (
         <>
-          <ul>
+          <ul style={{ listStyleType: "decimal" }}>
             {items.map((item) => (
-              <li key={item._id}>
+              <li key={item._id} style={{ margin: 20 }}>
                 <Link to={`/product/${item._id}`}>
-                  {item.title} - {item.price} $
+                  <Text fontSize="22">
+                    {item.title} - {item.price} $
+                  </Text>
                   <Image
-                    htmlWidth={200}
+                    htmlWidth={300}
+                    loading="lazy"
                     src={item.photos[0]}
                     alt="basket item"
                   />
                 </Link>
-                <Button mt="2" size="sm" colorScheme="red" onClick={() => {}}>
+                <Button
+                  mt="2"
+                  size="sm"
+                  colorScheme="red"
+                  onClick={() => removeFromBasket(item._id)}
+                >
                   Remove from Basket
                 </Button>
               </li>
@@ -40,7 +48,7 @@ function Basket() {
           </Box>
         </>
       )}
-    </div>
+    </Box>
   );
 }
 
