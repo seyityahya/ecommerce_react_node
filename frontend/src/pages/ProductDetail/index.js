@@ -12,9 +12,11 @@ import {
   CardBody,
   CardFooter,
 } from "@chakra-ui/react";
+import { useBasket } from "../../contexts/BasketContext";
 
 function ProductDetail() {
   const { product_id } = useParams();
+  const { addToBasket, items } = useBasket();
 
   const { isLoading, isError, data } = useQuery(["product", product_id], () =>
     fetchProduct(product_id)
@@ -28,6 +30,7 @@ function ProductDetail() {
     return <div>Error...</div>;
   }
 
+  const findBasketItem = items.find((item) => item._id === product_id);
   const images = data.photos.map((url) => ({ original: url }));
 
   return (
@@ -43,15 +46,21 @@ function ProductDetail() {
           <CardBody>
             <Heading size="md">{data.title}</Heading>
 
-            <Text py="2">{data.description}</Text>
+            <Text maxWidth={400} py="2">
+              {data.description}
+            </Text>
             <Text color="blue.600" fontSize="2xl">
               {data.price}$
             </Text>
           </CardBody>
 
           <CardFooter>
-            <Button variant="solid" colorScheme="whatsapp">
-              Buy Now
+            <Button
+              variant="solid"
+              colorScheme={findBasketItem ? "red" : "whatsapp"}
+              onClick={() => addToBasket(data, findBasketItem)}
+            >
+              {findBasketItem ? "Remove from basket" : "Add to Basket"}
             </Button>
           </CardFooter>
         </Stack>
