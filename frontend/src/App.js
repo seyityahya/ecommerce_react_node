@@ -5,9 +5,10 @@ import Signin from "./pages/Auth/Signin/index";
 import Signup from "./pages/Auth/Signup/index";
 import Products from "./pages/Products/index";
 import ProductDetail from "./pages/ProductDetail/index";
-import Profile from "./pages/Profile/index";
 import Basket from "./pages/Basket/index";
 import Error404 from "./pages/Error404/index";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
