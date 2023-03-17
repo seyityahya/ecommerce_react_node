@@ -24,9 +24,11 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/profile" element={<ProductedProfile />} />
-          <Route path="/admin" element={<ProductedAdmin />} />
-          <Route path="admin/orders" element={<Orders />} />
-          <Route path="/admin/products" element={<AdminProducts />} />
+          <Route path="/admin">
+            <Route index element={<ProductedAdmin />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="products" element={<AdminProducts />} />
+          </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
