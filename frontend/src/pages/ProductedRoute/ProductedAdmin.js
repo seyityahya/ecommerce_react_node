@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import Admin from "../Admin";
+import Admin from "../Admin/index";
 import { useAuth } from "../../contexts/AuthContext";
 
 function ProductedAdmin() {
@@ -9,8 +9,9 @@ function ProductedAdmin() {
 
   return (
     <>
-      {user.role === "admin" && <Admin />}
-      {user.role === "user" && <Navigate to={"/"} />}
+      {loggedIn === true && user.role === "admin" && <Admin />}
+      {loggedIn === true && user.role === "user" && <Navigate to={"/"} />}
+      {loggedIn === false && <Navigate to={"/"} />}
     </>
   );
 }

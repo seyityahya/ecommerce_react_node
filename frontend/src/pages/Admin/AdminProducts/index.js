@@ -1,10 +1,8 @@
-import React from "react";
-import "./style.css";
-import { Link, Route, Routes } from "react-router-dom";
-import AdminHome from "./AdminHome";
 import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Admin() {
+function AdminProducts() {
   return (
     <div>
       <nav>
@@ -20,13 +18,9 @@ function Admin() {
           </li>
         </ul>
       </nav>
-      <Box mt="10">
-        <Routes>
-          <Route path="/" element={<AdminHome />} />
-        </Routes>
-      </Box>
+      <Box mt={10}>Products</Box>
     </div>
   );
 }
 
-export default Admin;
+export default AdminProducts;

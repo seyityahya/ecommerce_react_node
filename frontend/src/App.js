@@ -9,6 +9,8 @@ import Basket from "./pages/Basket/index";
 import Error404 from "./pages/Error404/index";
 import ProductedProfile from "./pages/ProductedRoute/ProductedProfile";
 import ProductedAdmin from "./pages/ProductedRoute/ProductedAdmin";
+import Orders from "./pages/Admin/Orders";
+import AdminProducts from "./pages/Admin/AdminProducts";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/basket" element={<Basket />} />
           <Route path="/profile" element={<ProductedProfile />} />
           <Route path="/admin" element={<ProductedAdmin />} />
+          <Route path="admin/orders" element={<Orders />} />
+          <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
