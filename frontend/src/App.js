@@ -11,6 +11,7 @@ import ProductedProfile from "./pages/ProductedRoute/ProductedProfile";
 import ProductedAdmin from "./pages/ProductedRoute/ProductedAdmin";
 import Orders from "./pages/Admin/Orders";
 import AdminProducts from "./pages/Admin/AdminProducts";
+import AdminProductDetail from "./pages/Admin/AdminProductDetail";
 
 function App() {
   return (
@@ -27,7 +28,10 @@ function App() {
           <Route path="/admin">
             <Route index element={<ProductedAdmin />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="products" element={<AdminProducts />} />
+            <Route path="products">
+              <Route index element={<AdminProducts />} />
+              <Route path=":product_id" element={<AdminProductDetail />} />
+            </Route>
           </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>
