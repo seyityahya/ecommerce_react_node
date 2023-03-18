@@ -5,7 +5,6 @@ import AdminHome from "../Admin/AdminHome";
 
 function ProductedAdmin() {
   const { user, loggedIn } = useAuth();
-  console.log(user);
 
   return (
     <>
