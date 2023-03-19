@@ -6,7 +6,6 @@ import "antd/dist/antd";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BasketProvider } from "./contexts/BasketContext";
 import { BrowserRouter } from "react-router-dom";
@@ -31,6 +30,5 @@ root.render(
         </AuthProvider>
       </ChakraProvider>
     </BrowserRouter>
-    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

@@ -171,7 +171,7 @@ function NewProduct() {
                       type="submit"
                       isLoading={isSubmitting}
                     >
-                      Update
+                      Add Product
                     </Button>
                   </form>
                 </Box>

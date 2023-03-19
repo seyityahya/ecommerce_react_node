@@ -53,9 +53,9 @@ function Basket() {
       )}
       {items.length > 0 && (
         <>
-          <ul style={{ listStyleType: "decimal" }}>
+          <ul style={({ listStyleType: "decimal" }, { display: "flex" })}>
             {items.map((item) => (
-              <li key={item._id} style={{ margin: 20 }}>
+              <li key={item._id} style={({ margin: 20 }, { width: "25%" })}>
                 <Link to={`/product/${item._id}`}>
                   <Text fontSize="22">
                     {item.title} - {item.price} $
@@ -65,6 +65,9 @@ function Basket() {
                     loading="lazy"
                     src={item.photos[0]}
                     alt="basket item"
+                    boxSize={250}
+                    objectFit="cover"
+                    borderRadius="20px"
                   />
                 </Link>
                 <Button
@@ -83,7 +86,7 @@ function Basket() {
           </Box>
           {/* Order kısmı buradan sonra başlamaktadır. */}
           <Button onClick={onOpen} colorScheme="whatsapp" mt={4}>
-            Open Modal
+            Buy now
           </Button>
 
           <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
