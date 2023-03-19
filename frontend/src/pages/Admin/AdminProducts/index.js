@@ -87,12 +87,20 @@ function AdminProducts() {
         </ul>
       </nav>
       <Box mt={10}>
-        <Text fontSize="2xl" p="5">
-          Products
-        </Text>
-        <Button>
-          <Link to="/admin/products/new">New</Link>
-        </Button>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          p={4}
+          mr={10}
+        >
+          <Text fontSize="2xl" p="5">
+            Products
+          </Text>
+          <Button colorScheme={"facebook"}>
+            <Link to="/admin/products/new">New</Link>
+          </Button>
+        </Box>
 
         <Table dataSource={data} columns={columns} rowKey="_id" />
       </Box>

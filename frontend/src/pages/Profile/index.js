@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { Text, Button, Alert, AlertIcon } from "@chakra-ui/react";
+import { Text, Button, Alert, AlertIcon, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 function Profile() {
@@ -32,8 +32,14 @@ function Profile() {
       )}
       {loggedIn === true && (
         <>
-          <Text fontSize={22}>Profile</Text>
-          <code>{JSON.stringify(user)}</code>
+          <Text fontSize={28} fontWeight={700}>
+            Profile
+          </Text>
+          <Box mt={4}>
+            <Text fontSize={20}>email: {user.email}</Text>
+            <Text fontSize={20}>role: {user.role}</Text>
+          </Box>
+
           <br />
           <br />
           <Link to="/">
