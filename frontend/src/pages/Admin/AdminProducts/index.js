@@ -90,6 +90,9 @@ function AdminProducts() {
         <Text fontSize="2xl" p="5">
           Products
         </Text>
+        <Button>
+          <Link to="/admin/products/new">New</Link>
+        </Button>
 
         <Table dataSource={data} columns={columns} rowKey="_id" />
       </Box>
