@@ -26,6 +26,7 @@ function Orders() {
   if (isError) {
     return <div>Error {error.message}</div>;
   }
+  console.log(data);
   return (
     <div>
       <nav>
@@ -58,7 +59,11 @@ function Orders() {
           <Tbody>
             {data.map((item) => (
               <Tr key={item._id}>
-                <Td>{item.user.email}</Td>
+                {item.user === null ? (
+                  <Td>No Name</Td>
+                ) : (
+                  <Td>{item.user.email}</Td>
+                )}
                 <Td>{item.adress}</Td>
                 <Td isNumeric>{item.items.length}</Td>
               </Tr>
