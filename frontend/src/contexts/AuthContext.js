@@ -14,8 +14,12 @@ const AuthProvider = ({ children }) => {
       try {
         const me = await fetchMe();
 
-        setLoggedIn(true);
-        setUser(me);
+        if (Object.keys(me).length === 0) {
+          setLoggedIn(false);
+        } else {
+          setLoggedIn(true);
+          setUser(me);
+        }
 
         setLoading(false);
       } catch (e) {
